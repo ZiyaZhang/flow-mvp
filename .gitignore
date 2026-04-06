@@ -1,0 +1,6 @@
+node_modules
+apps/server/dist
+apps/web/dist
+data/sessions/*.json
+!data/sessions/.gitkeep
+.DS_Store
