@@ -1,6 +1,6 @@
 # Flow MVP Sidecar
 
-一个面向 CodeBuddy 的“方案 A”最小可行原型。
+一个面向 CodeBuddy 验证interactive mcp apps的mvp。
 
 目标不是把 interactive app 硬塞进 CodeBuddy 聊天窗口，而是用一个本地 sidecar 进程先验证这条降级链路是否成立：
 
