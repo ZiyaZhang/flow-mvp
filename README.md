@@ -403,6 +403,22 @@ npm run dev:web
 
 ## CodeBuddy 配置
 
+在下面所有配置示例里，不要直接照抄路径。
+
+你需要先确定自己机器上的仓库绝对路径，例如：
+
+- macOS / Linux: `/absolute/path/to/flow-mvp`
+- Windows: `C:\\absolute\\path\\to\\flow-mvp`
+
+为了描述方便，下文统一用：
+
+- `<FLOW_MVP_REPO>` 表示仓库根目录绝对路径
+
+例如：
+
+- `apps/server/dist/index.js` 的完整路径应替换为 `<FLOW_MVP_REPO>/apps/server/dist/index.js`
+- `data/sessions` 的完整路径应替换为 `<FLOW_MVP_REPO>/data/sessions`
+
 ### 推荐：CodeBuddy IDE 配置
 
 如果你用的是 CodeBuddy IDE，而不是 CLI，按下面步骤启用：
@@ -422,11 +438,11 @@ npm run dev:web
       "type": "stdio",
       "command": "node",
       "args": [
-        "/Users/ziya/develop/MCP Apps/apps/server/dist/index.js"
+        "<FLOW_MVP_REPO>/apps/server/dist/index.js"
       ],
       "env": {
         "FLOW_MVP_PORT": "4318",
-        "FLOW_MVP_DATA_DIR": "/Users/ziya/develop/MCP Apps/data/sessions"
+        "FLOW_MVP_DATA_DIR": "<FLOW_MVP_REPO>/data/sessions"
       },
       "description": "Local sidecar flow editor MVP"
     }
@@ -440,6 +456,7 @@ npm run dev:web
 - 路径必须改成你自己机器上的绝对路径
 - `node` 必须能在 CodeBuddy IDE 环境里执行
 - 如果 `4318` 被占用，可以改成别的端口，但配置和服务端环境变量要一致
+- JSON 里的 `<FLOW_MVP_REPO>` 不会自动展开，必须手工替换成真实路径
 
 ### 方式 1：`codebuddy mcp add`
 
@@ -447,16 +464,16 @@ npm run dev:web
 
 ```bash
 codebuddy mcp add --scope user flow-mvp -- \
-  node "/Users/ziya/develop/MCP Apps/apps/server/dist/index.js"
+  node "<FLOW_MVP_REPO>/apps/server/dist/index.js"
 ```
 
 如果要指定端口或数据目录：
 
 ```bash
 FLOW_MVP_PORT=4318 \
-FLOW_MVP_DATA_DIR="/Users/ziya/develop/MCP Apps/data/sessions" \
+FLOW_MVP_DATA_DIR="<FLOW_MVP_REPO>/data/sessions" \
 codebuddy mcp add --scope user flow-mvp -- \
-  node "/Users/ziya/develop/MCP Apps/apps/server/dist/index.js"
+  node "<FLOW_MVP_REPO>/apps/server/dist/index.js"
 ```
 
 ### 方式 2：`codebuddy mcp add-json`
@@ -466,11 +483,11 @@ codebuddy mcp add-json --scope user flow-mvp '{
   "type": "stdio",
   "command": "node",
   "args": [
-    "/Users/ziya/develop/MCP Apps/apps/server/dist/index.js"
+    "<FLOW_MVP_REPO>/apps/server/dist/index.js"
   ],
   "env": {
     "FLOW_MVP_PORT": "4318",
-    "FLOW_MVP_DATA_DIR": "/Users/ziya/develop/MCP Apps/data/sessions"
+    "FLOW_MVP_DATA_DIR": "<FLOW_MVP_REPO>/data/sessions"
   }
 }'
 ```
@@ -484,11 +501,11 @@ codebuddy mcp add-json --scope user flow-mvp '{
       "type": "stdio",
       "command": "node",
       "args": [
-        "/Users/ziya/develop/MCP Apps/apps/server/dist/index.js"
+        "<FLOW_MVP_REPO>/apps/server/dist/index.js"
       ],
       "env": {
         "FLOW_MVP_PORT": "4318",
-        "FLOW_MVP_DATA_DIR": "/Users/ziya/develop/MCP Apps/data/sessions"
+        "FLOW_MVP_DATA_DIR": "<FLOW_MVP_REPO>/data/sessions"
       },
       "description": "Local sidecar flow editor MVP"
     }
